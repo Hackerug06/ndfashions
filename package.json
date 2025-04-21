@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.12.4",
-    "@material-ui/icons": "^4.11.3",
+    "@mui/material": "^5.14.20",
+    "@mui/icons-material": "^5.14.20",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-qr-barcode-scanner": "^1.1.5",
@@ -42,4 +42,4 @@
       "last 1 safari version"
     ]
   }
-}
+  }
