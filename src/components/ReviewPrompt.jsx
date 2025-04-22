@@ -1,16 +1,24 @@
 import React from 'react';
 import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button, Rating, Box } from '@material-ui/core';
 import StarIcon from '@material-ui/icons/Star';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  ratingContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop: theme.spacing(2),
+  }
+}));
 
 function ReviewPrompt({ onClose }) {
+  const classes = useStyles();
   const [rating, setRating] = React.useState(0);
 
   const handleSubmit = () => {
-    // Here you would typically send the rating to your backend
     console.log('User rating:', rating);
     onClose();
     
-    // Open app store based on platform
     if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
       window.open('itms-apps://itunes.apple.com/app/idYOUR_APP_ID?action=write-review');
     } else {
@@ -25,7 +33,7 @@ function ReviewPrompt({ onClose }) {
         <DialogContentText>
           We'd love to hear your feedback! Please rate your experience.
         </DialogContentText>
-        <Box display="flex" justifyContent="center" mt={2}>
+        <Box className={classes.ratingContainer}>
           <Rating
             name="app-rating"
             value={rating}
