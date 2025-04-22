@@ -1,18 +1,8 @@
 import React from 'react';
-import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button, Rating, Box } from '@material-ui/core';
-import StarIcon from '@material-ui/icons/Star';
-import { makeStyles } from '@material-ui/core/styles';
-
-const useStyles = makeStyles((theme) => ({
-  ratingContainer: {
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop: theme.spacing(2),
-  }
-}));
+import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button, Rating, Box } from '@mui/material';
+import StarIcon from '@mui/icons-material/Star';
 
 function ReviewPrompt({ onClose }) {
-  const classes = useStyles();
   const [rating, setRating] = React.useState(0);
 
   const handleSubmit = () => {
@@ -33,7 +23,7 @@ function ReviewPrompt({ onClose }) {
         <DialogContentText>
           We'd love to hear your feedback! Please rate your experience.
         </DialogContentText>
-        <Box className={classes.ratingContainer}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
           <Rating
             name="app-rating"
             value={rating}
