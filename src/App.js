@@ -12,13 +12,12 @@ function App() {
   const [appOpenedCount, setAppOpenedCount] = useState(0);
 
   useEffect(() => {
-    // Check if user has opened the app enough times to prompt for review
     const count = localStorage.getItem('appOpenedCount') || 0;
     const newCount = parseInt(count) + 1;
     setAppOpenedCount(newCount);
     localStorage.setItem('appOpenedCount', newCount);
 
-    if (newCount % 5 === 0) { // Prompt every 5 opens
+    if (newCount % 5 === 0) {
       setShowReviewPrompt(true);
     }
   }, []);
@@ -27,19 +26,6 @@ function App() {
     if (result) {
       setScanResult(result);
     }
-  };
-
-  const handleCloseWarning = () => {
-    setShowWarning(false);
-  };
-
-  const handleProceed = () => {
-    setShowWarning(false);
-    // Proceed with the action
-  };
-
-  const closeReviewPrompt = () => {
-    setShowReviewPrompt(false);
   };
 
   return (
@@ -60,13 +46,13 @@ function App() {
       
       {showWarning && (
         <MaliciousLinkWarning 
-          onClose={handleCloseWarning} 
-          onProceed={handleProceed} 
+          onClose={() => setShowWarning(false)} 
+          onProceed={() => setShowWarning(false)} 
         />
       )}
       
       {showReviewPrompt && (
-        <ReviewPrompt onClose={closeReviewPrompt} />
+        <ReviewPrompt onClose={() => setShowReviewPrompt(false)} />
       )}
     </div>
   );
