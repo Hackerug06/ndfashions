@@ -6,7 +6,10 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "build",
-        "installCommand": "npm install --legacy-peer-deps"
+        "installCommand": "npm install --legacy-peer-deps",
+        "environment": {
+          "NODE_OPTIONS": "--openssl-legacy-provider"
+        }
       }
     }
   ],
