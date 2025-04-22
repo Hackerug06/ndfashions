@@ -1,6 +1,29 @@
-import wifiParser from 'wifi-qr-code-parser';
-import { parse } from 'vcard-parser';
+// Simple vCard parser
+export const parseVCard = (text) => {
+  const lines = text.split('\n');
+  const result = {
+    firstName: '',
+    lastName: '',
+    cellPhone: '',
+    email: ''
+  };
 
+  lines.forEach(line => {
+    if (line.startsWith('FN:')) {
+      const names = line.substring(3).split(' ');
+      result.firstName = names[0] || '';
+      result.lastName = names.slice(1).join(' ') || '';
+    } else if (line.startsWith('TEL;') && line.includes('CELL')) {
+      result.cellPhone = line.split(':')[1] || '';
+    } else if (line.startsWith('EMAIL;')) {
+      result.email = line.split(':')[1] || '';
+    }
+  });
+
+  return result;
+};
+
+// Updated detectQrType
 export const detectQrType = (text) => {
   if (!text) return 'text';
   
@@ -27,94 +50,39 @@ export const detectQrType = (text) => {
     return 'payment';
   }
   
-  // Default to text
   return 'text';
 };
 
+// Updated formatResultText for vCard
 export const formatResultText = (text, type) => {
   switch(type) {
     case 'wifi':
-      try {
-        const wifi = wifiParser(text);
-        return `Network: ${wifi.ssid}\nPassword: ${wifi.password || 'Open'}\nSecurity: ${wifi.security}`;
-      } catch {
-        return text;
-      }
+      return parseWifi(text);
     case 'vcard':
-      try {
-        const vcard = parse(text);
-        return `Name: ${vcard.firstName} ${vcard.lastName}\nPhone: ${vcard.cellPhone || vcard.homePhone}\nEmail: ${vcard.email}`;
-      } catch {
-        return text;
-      }
-    case 'url':
-      return `URL: ${text}`;
-    case 'payment':
-      return `Payment Request: ${text}`;
-    default:
-      return text;
+      const vcard = parseVCard(text);
+      return `Name: ${vcard.firstName} ${vcard.lastName}\nPhone: ${vcard.cellPhone}\nEmail: ${vcard.email}`;
+    // ... rest of your existing cases
   }
 };
 
-export const getActionLabel = (type) => {
-  switch(type) {
-    case 'wifi': return 'Connect to WiFi';
-    case 'url': return 'Open Website';
-    case 'vcard': return 'Save Contact';
-    case 'payment': return 'Make Payment';
-    default: return 'Copy Text';
-  }
-};
+// Simple WiFi parser
+const parseWifi = (text) => {
+  const parts = text.split(';');
+  const result = {
+    ssid: '',
+    password: '',
+    security: 'nopass'
+  };
 
-export const handleQrAction = (text, type) => {
-  switch(type) {
-    case 'wifi':
-      handleWifiConnection(text);
-      break;
-    case 'url':
-      window.open(text, '_blank', 'noopener,noreferrer');
-      break;
-    case 'vcard':
-      handleVCard(text);
-      break;
-    case 'payment':
-      handlePayment(text);
-      break;
-    default:
-      navigator.clipboard.writeText(text);
-      alert('Text copied to clipboard!');
-  }
-};
-
-const handleWifiConnection = (text) => {
-  try {
-    const wifi = wifiParser(text);
-    if (navigator.connection && navigator.connection.type === 'wifi') {
-      // This is just a simulation - actual WiFi connection requires platform-specific APIs
-      alert(`Connecting to WiFi network: ${wifi.ssid}`);
-    } else {
-      alert(`WiFi credentials:\nSSID: ${wifi.ssid}\nPassword: ${wifi.password || 'Open'}`);
+  parts.forEach(part => {
+    if (part.startsWith('S:')) {
+      result.ssid = part.substring(2);
+    } else if (part.startsWith('P:')) {
+      result.password = part.substring(2);
+    } else if (part.startsWith('T:')) {
+      result.security = part.substring(2);
     }
-  } catch (err) {
-    alert('Could not parse WiFi credentials');
-  }
-};
+  });
 
-const handleVCard = (text) => {
-  try {
-    const vcard = parse(text);
-    // In a real app, you would use the Contacts API or similar
-    alert(`Contact details:\nName: ${vcard.firstName} ${vcard.lastName}\nPhone: ${vcard.cellPhone}\nEmail: ${vcard.email}`);
-  } catch (err) {
-    alert('Could not parse contact information');
-  }
-};
-
-const handlePayment = (text) => {
-  // This would open the appropriate payment app
-  if (text.startsWith('upi:')) {
-    window.location.href = text;
-  } else {
-    alert(`Payment request: ${text}`);
-  }
+  return `Network: ${result.ssid}\nPassword: ${result.password || 'Open'}\nSecurity: ${result.security}`;
 };
