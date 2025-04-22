@@ -1,34 +1,17 @@
 import React from 'react';
-import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button } from '@material-ui/core';
-import WarningIcon from '@material-ui/icons/Warning';
-import { makeStyles } from '@material-ui/core/styles';
-
-const useStyles = makeStyles((theme) => ({
-  warningIcon: {
-    color: theme.palette.warning.main,
-    fontSize: '3rem',
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    display: 'flex',
-    alignItems: 'center',
-  }
-}));
+import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button } from '@mui/material';
+import WarningIcon from '@mui/icons-material/Warning';
 
 function MaliciousLinkWarning({ onClose, onProceed }) {
-  const classes = useStyles();
-
   return (
     <Dialog open={true} onClose={onClose}>
-      <DialogTitle>
-        <div className={classes.title}>
-          <WarningIcon className={classes.warningIcon} />
-          <span>Security Warning</span>
-        </div>
+      <DialogTitle sx={{ display: 'flex', alignItems: 'center' }}>
+        <WarningIcon color="warning" sx={{ fontSize: '3rem', mr: 2 }} />
+        <span>Security Warning</span>
       </DialogTitle>
       <DialogContent>
         <DialogContentText>
-          This link appears to be suspicious. It may lead to a malicious website that could harm your device or steal your information.
+          This link appears to be suspicious. It may lead to a malicious website.
         </DialogContentText>
         <DialogContentText>
           Are you sure you want to proceed?
@@ -38,7 +21,7 @@ function MaliciousLinkWarning({ onClose, onProceed }) {
         <Button onClick={onClose} color="primary">
           Cancel
         </Button>
-        <Button onClick={onProceed} color="secondary">
+        <Button onClick={onProceed} color="error">
           Proceed Anyway
         </Button>
       </DialogActions>
