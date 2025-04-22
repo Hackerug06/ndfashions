@@ -32,32 +32,6 @@
   margin: 20px auto;
 }
 
-.result-paper {
-  padding: 20px;
-  margin-top: 20px;
-}
-
-.result-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.result-content {
-  text-align: left;
-}
-
-.result-text {
-  white-space: pre-wrap;
-  word-break: break-word;
-  margin-bottom: 20px;
-}
-
-.action-button {
-  margin-top: 20px !important;
-}
-
 @media (max-width: 600px) {
   .scanner-container {
     height: 250px;
