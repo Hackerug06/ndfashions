@@ -1,44 +1,65 @@
-import React, { useState } from 'react';
-import { BarcodeScanner } from 'react-qr-barcode-scanner';
+import React, { useState, useEffect } from 'react';
+import QrScanner from 'react-qr-scanner';
 import FlashlightToggle from './FlashlightToggle';
 import useVibration from '../hooks/useVibration';
 import useFlashlight from '../hooks/useFlashlight';
 
 function CameraScanner({ onScan }) {
   const [torchOn, setTorchOn] = useState(false);
+  const [facingMode, setFacingMode] = useState('environment');
   const vibrate = useVibration();
   const { hasFlashlight, toggleFlashlight } = useFlashlight();
 
-  const handleUpdate = (err, result) => {
+  const handleScan = (result) => {
     if (result) {
-      vibrate(); // Vibrate on successful scan
-      onScan(result);
+      vibrate();
+      onScan({ text: result.text });
     }
+  };
+
+  const handleError = (err) => {
+    console.error('QR Scanner Error:', err);
+  };
+
+  const toggleCamera = () => {
+    setFacingMode(facingMode === 'environment' ? 'user' : 'environment');
+  };
+
+  const previewStyle = {
+    height: '100%',
+    width: '100%',
+    objectFit: 'cover'
   };
 
   return (
     <div className="scanner-container">
-      <BarcodeScanner
-        width="100%"
-        height="100%"
+      <QrScanner
+        delay={300}
+        onError={handleError}
+        onScan={handleScan}
+        style={previewStyle}
+        facingMode={facingMode}
         torch={torchOn}
-        onUpdate={handleUpdate}
-        facingMode="environment"
         constraints={{
           advanced: [{ zoom: true }],
           focusMode: 'continuous'
         }}
       />
       
-      {hasFlashlight && (
-        <FlashlightToggle 
-          torchOn={torchOn} 
-          toggleFlashlight={() => {
-            setTorchOn(!torchOn);
-            toggleFlashlight();
-          }} 
-        />
-      )}
+      <div className="camera-controls">
+        {hasFlashlight && (
+          <FlashlightToggle 
+            torchOn={torchOn} 
+            toggleFlashlight={() => {
+              setTorchOn(!torchOn);
+              toggleFlashlight();
+            }} 
+          />
+        )}
+        <button onClick={toggleCamera} className="switch-camera-btn">
+          Switch Camera
+        </button>
+      </div>
     </div>
   );
 }
