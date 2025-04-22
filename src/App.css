@@ -19,12 +19,6 @@
   overflow: hidden;
 }
 
-.flashlight-toggle {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  z-index: 10;
-}
 .camera-controls {
   position: absolute;
   bottom: 20px;
@@ -36,20 +30,6 @@
   z-index: 10;
 }
 
-.switch-camera-btn {
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.switch-camera-btn:hover {
-  background: rgba(0, 0, 0, 0.7);
-    }
-
 .result-container {
   width: 100%;
   max-width: 500px;
@@ -60,4 +40,4 @@
   .scanner-container {
     height: 250px;
   }
-}
+  }
