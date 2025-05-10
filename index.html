@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ND Fashion & Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ND Fashion & Services</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Quality Services & Products</h2>
+            <p>Discover our range of services including shoe cleaning, makeup services, and premium products like liquid soap and clothing.</p>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="images/shoe-cleaning.jpg" alt="Shoe Cleaning">
+                    <h3>Shoe Cleaning</h3>
+                    <p>Professional shoe cleaning services to restore your footwear to like-new condition. We use premium products to clean, deodorize, and protect your shoes.</p>
+                    <p><strong>Pricing:</strong> From 10,000 UGX depending on shoe type and condition</p>
+                    <button class="book-btn" data-service="Shoe Cleaning">Book Now</button>
+                </div>
+                <div class="service-card">
+                    <img src="images/makeup.jpg" alt="Makeup Services">
+                    <h3>Makeup Services</h3>
+                    <p>Professional makeup services for all occasions. Our certified makeup artists will enhance your natural beauty for weddings, parties, or special events.</p>
+                    <p><strong>Pricing:</strong> From 50,000 UGX (bridal packages available)</p>
+                    <button class="book-btn" data-service="Makeup Services">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="images/liquid-soap.jpg" alt="Liquid Soap">
+                    <h3>Premium Liquid Soap</h3>
+                    <p>Gentle yet effective liquid soap suitable for all skin types. Made with natural ingredients to nourish your skin while cleaning.</p>
+                    <p><strong>Price:</strong> 5,000 UGX per 500ml bottle</p>
+                    <button class="order-btn" data-product="Liquid Soap">Order Now</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/clothing.jpg" alt="Clothing">
+                    <h3>Fashion Clothing</h3>
+                    <p>High-quality clothing items for men and women. We offer a range of styles from casual wear to formal attire.</p>
+                    <p><strong>Price:</strong> Varies by item (20,000-150,000 UGX)</p>
+                    <button class="order-btn" data-product="Clothing">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2>Customer Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>"The shoe cleaning service brought my favorite sneakers back to life! Highly recommended."</p>
+                    <p class="author">- David K.</p>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The liquid soap is gentle on my skin and has a wonderful fragrance. I'm a repeat customer!"</p>
+                    <p class="author">- Sarah M.</p>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The makeup artist did an amazing job for my wedding. I looked absolutely stunning."</p>
+                    <p class="author">- Grace L.</p>
+                </div>
+            </div>
+            <div class="review-form">
+                <h3>Leave Your Review</h3>
+                <form id="reviewForm">
+                    <input type="text" placeholder="Your Name" required>
+                    <textarea placeholder="Your Review" required></textarea>
+                    <button type="submit">Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p><strong>Phone:</strong> +256 708 801462</p>
+                    <p><strong>Email:</strong> andrewmuwumuza95@gmail.com</p>
+                    <div class="social-links">
+                        <a href="https://www.tiktok.com/@ndfashion256" target="_blank">TikTok: @ndfashion256</a>
+                        <a href="imo:+256708801462">IMO: +256708801462</a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="tel" placeholder="Your Phone">
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 ND Fashion & Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Book <span id="serviceName"></span></h2>
+            <p>To book this service, please contact us on WhatsApp with your details.</p>
+            <a id="whatsappLink" href="#" class="whatsapp-btn">Contact on WhatsApp</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
