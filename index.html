@@ -9,198 +9,229 @@
 </head>
 <body>
     <header>
-        <div class="logo">ND Fashion & Services</div>
+        <div class="logo-container">
+            <img src="images/favicon.ico" alt="ND Fashion Logo" class="logo">
+            <h1>ND Fashion & Services</h1>
+        </div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#shoe-cleaning">Shoe Cleaning</a></li>
                 <li><a href="#liquid-soap">Liquid Soap</a></li>
                 <li><a href="#clothing">Clothing</a></li>
-                <li><a href="#makeup">Makeup</a></li>
+                <li><a href="#makeup">Makeup Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="mobile-menu-btn">☰</div>
+            <div class="hamburger">☰</div>
         </nav>
     </header>
 
     <main>
         <section id="home" class="hero">
-            <h1>Premium Services & Quality Products</h1>
-            <p>Discover our range of services and products designed to meet your needs</p>
-            <a href="#services" class="cta-button">Explore Services</a>
+            <div class="hero-content">
+                <h2>Premium Services & Quality Products</h2>
+                <p>Discover our range of services including shoe cleaning, makeup, and high-quality products</p>
+                <a href="#contact" class="cta-button">Get in Touch</a>
+            </div>
         </section>
 
-        <section id="services" class="services">
-            <h2>Our Services & Products</h2>
-            <div class="services-grid">
-                <div class="service-card" id="shoe-cleaning">
-                    <img src="images/shoe-cleaning.jpg" alt="Shoe Cleaning">
-                    <h3>Shoe Cleaning</h3>
-                    <p>Professional shoe cleaning services to keep your footwear looking brand new.</p>
-                    <button class="book-btn" data-service="Shoe Cleaning">Book Now</button>
+        <section id="shoe-cleaning" class="service-section">
+            <h2>Shoe Cleaning Services</h2>
+            <div class="service-container">
+                <div class="service-image">
+                    <img src="images/shoe-cleaning.jpg" alt="Shoe Cleaning Service">
                 </div>
-                
-                <div class="service-card" id="liquid-soap">
-                    <img src="images/liquid-soap.jpg" alt="Liquid Soap">
-                    <h3>Liquid Soap</h3>
-                    <p>Premium quality liquid soap for all your cleaning needs.</p>
-                    <button class="order-btn" data-product="Liquid Soap">Order Now</button>
+                <div class="service-details">
+                    <h3>Professional Shoe Cleaning</h3>
+                    <p>We provide top-quality shoe cleaning services that will make your shoes look brand new. Our process includes:</p>
+                    <ul>
+                        <li>Deep cleaning of all shoe materials</li>
+                        <li>Stain removal and odor treatment</li>
+                        <li>Polishing and protection</li>
+                        <li>Special care for delicate materials</li>
+                    </ul>
+                    <p class="price">Prices start at 20,000 UGX</p>
+                    <button class="book-button" data-service="Shoe Cleaning">Book Now</button>
                 </div>
-                
-                <div class="service-card" id="clothing">
-                    <img src="images/clothing.jpg" alt="Clothing">
-                    <h3>Clothing</h3>
-                    <p>Stylish and comfortable clothing for all occasions.</p>
-                    <button class="order-btn" data-product="Clothing">Order Now</button>
+            </div>
+        </section>
+
+        <section id="liquid-soap" class="service-section">
+            <h2>Liquid Soap Products</h2>
+            <div class="service-container reverse">
+                <div class="service-image">
+                    <img src="images/liquid-soap.jpg" alt="Liquid Soap Products">
                 </div>
-                
-                <div class="service-card" id="makeup">
+                <div class="service-details">
+                    <h3>Premium Quality Liquid Soap</h3>
+                    <p>Our liquid soap is made with natural ingredients and provides numerous benefits:</p>
+                    <ul>
+                        <li>Gentle on skin</li>
+                        <li>Effective cleaning power</li>
+                        <li>Pleasant fragrances available</li>
+                        <li>Eco-friendly formulation</li>
+                    </ul>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <img src="images/product1.jpg" alt="Liquid Soap 500ml">
+                            <h4>500ml Bottle</h4>
+                            <p>15,000 UGX</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/product2.jpg" alt="Liquid Soap 1L">
+                            <h4>1 Liter Bottle</h4>
+                            <p>25,000 UGX</p>
+                        </div>
+                    </div>
+                    <button class="order-button" data-product="Liquid Soap">Order Now</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="clothing" class="service-section">
+            <h2>Clothing Collection</h2>
+            <div class="service-container">
+                <div class="service-image">
+                    <img src="images/clothing.jpg" alt="Clothing Collection">
+                </div>
+                <div class="service-details">
+                    <h3>Stylish and Affordable Clothing</h3>
+                    <p>Browse our latest clothing collection featuring:</p>
+                    <ul>
+                        <li>Trendy designs</li>
+                        <li>High-quality fabrics</li>
+                        <li>Various sizes available</li>
+                        <li>Affordable prices</li>
+                    </ul>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <img src="images/product3.jpg" alt="Men's Shirt">
+                            <h4>Men's Casual Shirt</h4>
+                            <p>45,000 UGX</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/product4.jpg" alt="Women's Dress">
+                            <h4>Women's Summer Dress</h4>
+                            <p>60,000 UGX</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/product5.jpg" alt="T-Shirt">
+                            <h4>Unisex T-Shirt</h4>
+                            <p>30,000 UGX</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/product6.jpg" alt="Jeans">
+                            <h4>Designer Jeans</h4>
+                            <p>75,000 UGX</p>
+                        </div>
+                    </div>
+                    <button class="order-button" data-product="Clothing">Order Now</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="makeup" class="service-section">
+            <h2>Makeup Services</h2>
+            <div class="service-container reverse">
+                <div class="service-image">
                     <img src="images/makeup.jpg" alt="Makeup Services">
-                    <h3>Makeup Services</h3>
-                    <p>Professional makeup services for events, weddings, and special occasions.</p>
-                    <button class="book-btn" data-service="Makeup Services">Book Now</button>
+                </div>
+                <div class="service-details">
+                    <h3>Professional Makeup Services</h3>
+                    <p>Enhance your natural beauty with our professional makeup services:</p>
+                    <ul>
+                        <li>Bridal makeup</li>
+                        <li>Evening/event makeup</li>
+                        <li>Photoshoot makeup</li>
+                        <li>Makeup lessons available</li>
+                    </ul>
+                    <div class="pricing-table">
+                        <div class="pricing-tier">
+                            <h4>Basic Makeup</h4>
+                            <p>50,000 UGX</p>
+                        </div>
+                        <div class="pricing-tier">
+                            <h4>Premium Makeup</h4>
+                            <p>80,000 UGX</p>
+                        </div>
+                        <div class="pricing-tier">
+                            <h4>Bridal Package</h4>
+                            <p>120,000 UGX</p>
+                        </div>
+                    </div>
+                    <button class="book-button" data-service="Makeup Service">Book Appointment</button>
                 </div>
             </div>
         </section>
 
-        <section class="details">
-            <article id="shoe-details">
-                <h2>Shoe Cleaning Services</h2>
-                <p>Our professional shoe cleaning service includes:</p>
-                <ul>
-                    <li>Deep cleaning of all shoe materials</li>
-                    <li>Stain removal</li>
-                    <li>Deodorizing</li>
-                    <li>Polishing and protection</li>
-                </ul>
-                <p><strong>Pricing:</strong> Starting from 20,000 UGX depending on shoe type and condition.</p>
-            </article>
-
-            <article id="soap-details">
-                <h2>Liquid Soap Products</h2>
-                <p>Our premium liquid soap features:</p>
-                <ul>
-                    <li>Gentle on skin</li>
-                    <li>Effective cleaning power</li>
-                    <li>Pleasant fragrance</li>
-                    <li>Available in multiple sizes</li>
-                </ul>
-                <p><strong>Pricing:</strong> 5,000 UGX per 500ml bottle. Discounts available for bulk orders.</p>
-            </article>
-
-            <article id="clothing-details">
-                <h2>Clothing Collection</h2>
-                <p>Our clothing line includes:</p>
-                <ul>
-                    <li>Casual wear</li>
-                    <li>Formal attire</li>
-                    <li>Traditional outfits</li>
-                    <li>Accessories</li>
-                </ul>
-                <p><strong>Materials:</strong> High-quality cotton, linen, and blended fabrics.</p>
-                <p>Prices vary by item - contact us for current inventory and pricing.</p>
-            </article>
-
-            <article id="makeup-details">
-                <h2>Makeup Services</h2>
-                <p>Our professional makeup services include:</p>
-                <ul>
-                    <li>Bridal makeup</li>
-                    <li>Event makeup</li>
-                    <li>Photoshoot makeup</li>
-                    <li>Makeup lessons</li>
-                </ul>
-                <p><strong>Pricing:</strong> Starting from 50,000 UGX depending on service type.</p>
-                <p>Special packages available for weddings and group events.</p>
-            </article>
-        </section>
-
-        <section class="testimonials">
-            <h2>Customer Testimonials</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial">
-                    <p>"The shoe cleaning service brought my favorite sneakers back to life! Highly recommended."</p>
-                    <div class="author">- James K.</div>
+        <section id="testimonials" class="testimonials-section">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The shoe cleaning service is amazing! My old shoes look brand new again."
+                    </div>
+                    <div class="testimonial-author">- Sarah K.</div>
                 </div>
-                <div class="testimonial">
-                    <p>"The liquid soap leaves my skin feeling soft and clean without any irritation."</p>
-                    <div class="author">- Sarah M.</div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "I love the liquid soap - it's gentle on my skin and smells wonderful."
+                    </div>
+                    <div class="testimonial-author">- James M.</div>
                 </div>
-                <div class="testimonial">
-                    <p>"Beautiful clothing at affordable prices. I always get compliments when I wear them."</p>
-                    <div class="author">- Amina N.</div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The makeup artist did an incredible job for my wedding. Highly recommended!"
+                    </div>
+                    <div class="testimonial-author">- Diana N.</div>
                 </div>
             </div>
-            <button id="add-review-btn">Add Your Review</button>
-            
-            <div id="review-form" class="hidden">
-                <h3>Leave a Review</h3>
+            <div class="review-form">
+                <h3>Leave Your Review</h3>
                 <form id="reviewForm">
-                    <div class="form-group">
-                        <label for="review-name">Your Name:</label>
-                        <input type="text" id="review-name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="review-service">Service/Product:</label>
-                        <select id="review-service" required>
-                            <option value="">Select...</option>
-                            <option value="Shoe Cleaning">Shoe Cleaning</option>
-                            <option value="Liquid Soap">Liquid Soap</option>
-                            <option value="Clothing">Clothing</option>
-                            <option value="Makeup Services">Makeup Services</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="review-text">Your Review:</label>
-                        <textarea id="review-text" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="review-rating">Rating:</label>
-                        <select id="review-rating" required>
-                            <option value="5">★★★★★</option>
-                            <option value="4">★★★★☆</option>
-                            <option value="3">★★★☆☆</option>
-                            <option value="2">★★☆☆☆</option>
-                            <option value="1">★☆☆☆☆</option>
-                        </select>
-                    </div>
+                    <input type="text" placeholder="Your Name" required>
+                    <select required>
+                        <option value="">Select Service/Product</option>
+                        <option value="shoe-cleaning">Shoe Cleaning</option>
+                        <option value="liquid-soap">Liquid Soap</option>
+                        <option value="clothing">Clothing</option>
+                        <option value="makeup">Makeup Service</option>
+                    </select>
+                    <textarea placeholder="Your Review" required></textarea>
                     <button type="submit">Submit Review</button>
                 </form>
             </div>
         </section>
 
-        <section id="contact" class="contact">
+        <section id="contact" class="contact-section">
             <h2>Contact Us</h2>
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3>Get In Touch</h3>
+                    <h3>Get in Touch</h3>
                     <p><strong>Phone:</strong> <a href="tel:+256708801462">+256 708 801462</a></p>
                     <p><strong>Email:</strong> <a href="mailto:andrewmuwumuza95@gmail.com">andrewmuwumuza95@gmail.com</a></p>
-                    <p><strong>Social Media:</strong></p>
-                    <div class="social-links">
+                    <div class="social-media">
+                        <h4>Follow Us</h4>
                         <a href="https://www.tiktok.com/@ndfashion256" target="_blank">TikTok: @ndfashion256</a>
                         <a href="imo:+256708801462">IMO: +256708801462</a>
                     </div>
                 </div>
                 <div class="contact-form">
                     <h3>Send Us a Message</h3>
-                    <form id="inquiryForm">
-                        <div class="form-group">
-                            <label for="name">Name:</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject:</label>
-                            <input type="text" id="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message:</label>
-                            <textarea id="message" required></textarea>
-                        </div>
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="tel" placeholder="Your Phone Number">
+                        <select required>
+                            <option value="">Regarding</option>
+                            <option value="shoe-cleaning">Shoe Cleaning</option>
+                            <option value="liquid-soap">Liquid Soap</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="makeup">Makeup Service</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <textarea placeholder="Your Message" required></textarea>
                         <button type="submit">Send Message</button>
                     </form>
                 </div>
@@ -226,74 +257,46 @@
                 <p>Email: andrewmuwumuza95@gmail.com</p>
             </div>
             <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="https://www.tiktok.com/@ndfashion256" target="_blank">TikTok</a>
-                    <a href="imo:+256708801462">IMO</a>
-                </div>
+                <h3>Business Hours</h3>
+                <p>Monday - Friday: 9am - 7pm</p>
+                <p>Saturday: 10am - 5pm</p>
+                <p>Sunday: Closed</p>
             </div>
         </div>
-        <div class="copyright">
-            <p>&copy; 2023 ND Fashion & Services. All rights reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2023 ND Fashion & Services. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <div id="booking-modal" class="modal hidden">
+    <div class="modal" id="bookingModal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
-            <h2>Book <span id="service-name"></span></h2>
+            <h3>Book <span id="serviceTitle"></span></h3>
+            <p>You'll be redirected to WhatsApp to complete your booking</p>
             <form id="bookingForm">
-                <div class="form-group">
-                    <label for="booking-name">Your Name:</label>
-                    <input type="text" id="booking-name" required>
-                </div>
-                <div class="form-group">
-                    <label for="booking-phone">Phone Number:</label>
-                    <input type="tel" id="booking-phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="booking-date">Preferred Date:</label>
-                    <input type="date" id="booking-date" required>
-                </div>
-                <div class="form-group">
-                    <label for="booking-notes">Additional Notes:</label>
-                    <textarea id="booking-notes"></textarea>
-                </div>
-                <button type="submit">Complete Booking via WhatsApp</button>
+                <input type="text" placeholder="Your Name" required>
+                <input type="tel" placeholder="Your Phone Number" required>
+                <input type="date" required>
+                <textarea placeholder="Additional Notes"></textarea>
+                <button type="submit">Continue to WhatsApp</button>
             </form>
         </div>
     </div>
 
-    <div id="order-modal" class="modal hidden">
+    <div class="modal" id="orderModal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
-            <h2>Order <span id="product-name"></span></h2>
+            <h3>Order <span id="productTitle"></span></h3>
+            <p>You'll be redirected to WhatsApp to complete your order</p>
             <form id="orderForm">
-                <div class="form-group">
-                    <label for="order-name">Your Name:</label>
-                    <input type="text" id="order-name" required>
-                </div>
-                <div class="form-group">
-                    <label for="order-phone">Phone Number:</label>
-                    <input type="tel" id="order-phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="order-quantity">Quantity:</label>
-                    <input type="number" id="order-quantity" min="1" value="1" required>
-                </div>
-                <div class="form-group">
-                    <label for="order-address">Delivery Address (if applicable):</label>
-                    <textarea id="order-address"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="order-notes">Additional Notes:</label>
-                    <textarea id="order-notes"></textarea>
-                </div>
-                <button type="submit">Complete Order via WhatsApp</button>
+                <input type="text" placeholder="Your Name" required>
+                <input type="tel" placeholder="Your Phone Number" required>
+                <textarea placeholder="Items you want to order" required></textarea>
+                <button type="submit">Continue to WhatsApp</button>
             </form>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
-    </html>
+                </html>
