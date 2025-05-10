@@ -1,1 +1,1 @@
-# qr-scanner-app
+# Andre's Fashion Website
